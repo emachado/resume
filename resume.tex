@@ -1,0 +1,228 @@
+% Edjunior Barbosa Machado's resume
+% based on: http://www.mcnabbs.org/andrew/linux/latexres/
+% Created: 12 July 2013
+% Last Modified: 16 Mar 2017
+
+\documentclass[11pt,oneside]{article}
+\usepackage{ae,aecompl}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+
+\pagestyle{empty}
+\geometry{letterpaper,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in,headheight=0in,headsep=0in,footskip=.3in}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+% Name and contact information
+\newcommand{\name}{Edjunior Barbosa Machado}
+\newcommand{\addr}{São Paulo, SP}
+\newcommand{\phone}{+55 11 95331-8871}
+\newcommand{\email}{edjunior@gmail.com}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% New commands and environments
+
+% This defines how the name looks
+\newcommand{\bigname}[1]{
+	\begin{center}\selectfont\Huge\scshape#1\end{center}
+}
+
+% A ressection is a main section (<H1>Section</H1>)
+\newenvironment{ressection}[1]{
+	\vspace{4pt}
+	{\selectfont\Large#1}
+	\begin{itemize}
+	\vspace{3pt}
+}{
+	\end{itemize}
+}
+
+% A resitem is a simple list element in a ressection (first level)
+\newcommand{\resitem}[1]{
+	\vspace{-4pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A ressubitem is a simple list element in anything but a ressection (second level)
+\newcommand{\ressubitem}[1]{
+	\vspace{-1pt}
+	\item \begin{flushleft} #1 \end{flushleft}
+}
+
+% A resbigitem is a complex list element for stuff like jobs and education:
+%  Arg 1: Name of company or university
+%  Arg 2: Location
+%  Arg 3: Title and/or date range
+\newcommand{\resbigitem}[3]{
+	\vspace{-5pt}
+	\item
+	\textbf{#1}---#2 \\
+	\textit{#3}
+}
+
+% This is a list that comes with a resbigitem
+\newenvironment{ressubsec}[3]{
+	\resbigitem{#1}{#2}{#3}
+	\vspace{-2pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+% This is a simple sublist
+\newenvironment{reslist}[1]{
+	\resitem{\textbf{#1}}
+	\vspace{-5pt}
+	\begin{itemize}
+}{
+	\end{itemize}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Now for the actual document:
+
+\begin{document}
+
+% Name with horizontal rule
+\bigname{\name}
+
+\vspace{-8pt} \rule{\textwidth}{1pt}
+
+\vspace{-1pt} {\small\itshape \addr \hfill \phone}
+\vspace{-1pt} {\small\itshape \email}
+
+\vspace{8 pt}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Education}
+
+  \resbigitem{Universidade Estadual Paulista (UNESP)}{Rio Claro, SP}{Bachelor of Science (BS), Computer Science: 2001 - 2005}
+	\vspace{-2pt}
+
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Experience}
+
+	\begin{ressubsec}{IBM - Linux Technology Center}{Home based}{Software Engineer - LTC POWER Toolchain: January, 2012--March, 2017}
+
+		\ressubitem{GDB: enable and support POWER processors' hardware
+		debug facilities and new instructions, as well as investigate
+		and solve issues against upstream, Linux distros partners and
+		IBM Advance Toolchain GDB releases.}
+
+		\ressubitem{PAFLib: implement and document Data Stream Control
+		Register support (libpaf-dsc).}
+
+		\ressubitem{GLIBC: contribute with patches for ppc64-specific
+		features (functions for shared resources hints) and general
+		support (update headers with hwpoison signals).}
+
+		\ressubitem{Continuous Integration: install and manage
+		ppc64[le] virtual machines used as buildslaves for GDB.}
+
+		\ressubitem{Support sales proof-of-concept meetings with
+		prospect customers, leading performance tests, tunning and
+		investigating port of Linux applications from x86 to ppc64.}
+
+	\end{ressubsec}
+
+	\begin{ressubsec}{IBM - Linux Technology Center}{Hortolandia, SP / Home based}{Software Engineer - Linux Defect Support: March, 2008--December, 2011}
+
+		\ressubitem{Work as Level-3 technical support, screening,
+		debugging, solving and testing issues against packages from
+		Linux distros (Red Hat/Fedora, SUSE/openSUSE) in several areas
+		(basesystem tools, installation and packaging, glibc, kernel).}
+
+	\end{ressubsec}
+
+	\begin{ressubsec}{Asga S/A}{Paulinia, SP}{Software Developer: January, 2006--February, 2008}
+
+		\ressubitem{Design and develop embedded Linux system for
+		PowerPC plataform, implementing device drivers, network
+		drivers, low level applications, libraries and CGI for
+		telecom devices management interfaces.}
+
+	\end{ressubsec}
+
+	\begin{ressubsec}{Asga S/A}{Paulinia, SP}{Intern: November, 2005--December, 2005}
+
+		\ressubitem{Develop and test embedded Linux utilities for
+		telecom devices.}
+
+	\end{ressubsec}
+
+	\begin{ressubsec}{Universidade Estadual de Campinas - Centro de Computação}{Campinas, SP}{Intern: Junho, 2005--Outubro, 2005}
+
+		\ressubitem{Implement back-end support for a PHP+PostgreSQL CMS
+		to provide PDF report generation.}
+
+	\end{ressubsec}
+
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Skills}
+
+  \resitem{\textbf{Operating Systems:} Linux (Fedora/Red Hat, Debian/Ubuntu, Gentoo, ELDK)}
+
+	\begin{reslist}{Computer Languages:}
+
+		\ressubitem{Proficient in C, Shell Script, HTML/XML}
+
+		\ressubitem{Familiar with Python, PowerPC Assembly, Expect, PHP, PostgreSQL, CSS, JavaScript, \LaTeX}
+
+	\end{reslist}
+
+	\begin{reslist}{Tools and Systems:}
+
+		\ressubitem{Proficient in GDB/gdbserver, GCC, Autotools, Vi, Git}
+
+		\ressubitem{Familiar with Dejagnu, KVM/Qemu, KGDB, Buildbot, svn, cvs, Docker}
+
+	\end{reslist}
+
+
+\end{ressection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ressection}{Achievements and Activities}
+
+	\resitem{Promoted to IBM Staff Software Engineer (November, 2014).}
+
+	\resitem{Presentation: ``Aprendendo a depurar programas com o GDB''.
+	Presented with Sérgio Durigan Júnior at UNICAMP, Campinas - SP (July, 2011);
+	PUC, Campinas - SP (September, 2012);
+	UNESP, Rio Claro - SP (October, 2012).
+	(source: https://github.com/emachado/gdb-unicamp2011)}
+
+	\resitem{Presentation: ``Depurando o Kernel de forma interativa com KGDB''.
+	Presented with Breno Leitão at Fórum Internacional de Software Livre 11, Porto Alegre - RS (July, 2010).
+	(source: https://github.com/emachado/kgdb-fisl2010)}
+
+\end{ressection}
+
+\begin{ressection}{Languages}
+
+	\resitem{Portuguese: native proficiency.}
+	\resitem{English: professional working proficiency.}
+
+\end{ressection}
+
+
+\end{document}
